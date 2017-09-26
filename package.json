@@ -1,8 +1,8 @@
 {
   "name": "sequis-online",
-  "version": "0.0.0",
-  "description": "Hello Expo!",
-  "author": null,
+  "version": "0.0.1",
+  "description": "Sequis Online Mobile Application for Android and IOS!",
+  "author": "Cendekia Pramana Putra",
   "license": "",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
