@@ -30,7 +30,7 @@ export default TabNavigator(
           case 'Home':
             iconName = Platform.OS === 'ios'
               ? `ios-home`
-              : 'md-information-circle';
+              : 'md-home';
             iconSize = focused ? 40 : 28;
             marginBottom = focused ? -3 : 0;
             break;
