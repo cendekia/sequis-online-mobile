@@ -1,10 +1,11 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+import Header from '../components/headers/DefaultHeader';
 
-export default class LinksScreen extends React.Component {
+export default class ChatsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Customer Care',
+    header: <Header {...this.props}/>,
   };
 
   render() {
