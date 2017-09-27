@@ -62,7 +62,7 @@ class DefaultHeader extends Component {
           {/*<Title style={{ color: "#FFF", width: 200, marginTop: 8 }}>{this.props.title}</Title>*/}
           <Image
             source={require('../../assets/icons/loading-icon-white.png')}
-            style={{ width: 143, height: 29, marginTop: 6 }}
+            style={{ width: 143, height: 29, marginTop: Platform.OS ==='android' ? 12 : 6 }}
           />
         </Body>
 
