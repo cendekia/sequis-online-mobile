@@ -14,7 +14,7 @@ export default TabNavigator(
     Home: {
       screen: HomeScreen,
     },
-    Links: {
+    Chat: {
       screen: LinksScreen,
     },
     Settings: {
@@ -25,28 +25,34 @@ export default TabNavigator(
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state;
-        let iconName;
+        let iconName, iconSize, marginBottom;
         switch (routeName) {
           case 'Home':
             iconName = Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
+              ? `ios-home`
               : 'md-information-circle';
+            iconSize = focused ? 40 : 28;
+            marginBottom = focused ? 0 : 0;
             break;
-          case 'Links':
+          case 'Chat':
             iconName = Platform.OS === 'ios'
-              ? `ios-link${focused ? '' : '-outline'}`
-              : 'md-link';
+              ? `ios-chatbubbles`
+              : 'md-chatbubbles';
+            iconSize = focused ? 40 : 28;
+            marginBottom = focused ? 0 : 0;
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
-              ? `ios-options${focused ? '' : '-outline'}`
-              : 'md-options';
+              ? `ios-switch`
+              : 'md-switch';
+            iconSize = focused ? 40 : 28;
+            marginBottom = focused ? 0 : 0;
         }
         return (
           <Ionicons
             name={iconName}
-            size={28}
-            style={{ marginBottom: -3 }}
+            size={iconSize}
+            style={{ marginBottom: marginBottom }}
             color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
           />
         );
@@ -56,5 +62,13 @@ export default TabNavigator(
     tabBarPosition: 'bottom',
     animationEnabled: false,
     swipeEnabled: false,
+    tabBarOptions: {
+      activeTintColor: Colors.tabIconSelected,
+      inactiveTintColor: Colors.tabIconDefault,
+      showLabel: false,
+      style: {
+        borderTopColor: Colors.tabIconSelected,
+      }
+    },
   }
 );
