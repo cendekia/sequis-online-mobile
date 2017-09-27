@@ -14,7 +14,8 @@
       "color": "#000000"
     },
     "loading": {
-      "icon": "./assets/icons/loading-icon.png"
+      "icon": "./assets/icons/loading-icon-white.png",
+      "backgroundColor": "#00b4c5",
     },
     "packagerOpts": {
       "assetExts": ["ttf"]
