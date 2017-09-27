@@ -53,7 +53,7 @@ export default TabNavigator(
             name={iconName}
             size={iconSize}
             style={{ marginBottom: marginBottom }}
-            color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+            color={focused ? 'white' : Colors.tabIconDefault}
           />
         );
       },
@@ -68,6 +68,7 @@ export default TabNavigator(
       showLabel: false,
       style: {
         borderTopColor: Colors.tabIconSelected,
+        backgroundColor: Colors.tabIconSelected,
       }
     },
   }
