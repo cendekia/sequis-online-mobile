@@ -32,21 +32,21 @@ export default TabNavigator(
               ? `ios-home`
               : 'md-information-circle';
             iconSize = focused ? 40 : 28;
-            marginBottom = focused ? 0 : 0;
+            marginBottom = focused ? -3 : 0;
             break;
           case 'Chat':
             iconName = Platform.OS === 'ios'
               ? `ios-chatbubbles`
               : 'md-chatbubbles';
             iconSize = focused ? 40 : 28;
-            marginBottom = focused ? 0 : 0;
+            marginBottom = focused ? -3 : 0;
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
               ? `ios-switch`
               : 'md-switch';
             iconSize = focused ? 40 : 28;
-            marginBottom = focused ? 0 : 0;
+            marginBottom = focused ? -3 : 0;
         }
         return (
           <Ionicons
