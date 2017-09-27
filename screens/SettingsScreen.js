@@ -1,9 +1,10 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
+import Header from '../components/headers/DefaultHeader';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Settings',
+    header: <Header {...this.props}/>,
   };
 
   render() {
