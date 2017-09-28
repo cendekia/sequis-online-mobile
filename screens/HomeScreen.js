@@ -7,15 +7,14 @@ import Header from '../components/headers/DefaultHeader';
 import {
   Container,
   Content,
-  Row,
-  Card,
-  CardItem,
+  Row, Col, Grid,
+  Card, CardItem,
   Body,
   H1, H2, H3, Text,
   Button,
   Right,
   Icon,
-  ListItem
+  List, ListItem
 } from "native-base";
 import Colors from '../constants/Colors';
 
@@ -27,6 +26,23 @@ class HomeScreen extends Component {
   };
 
   render() {
+    var news = [
+      {
+        image: banner,
+        title: `Manfaatkan Waktu Sempit di Hari Libur “Kejepit”`,
+        published_date: '22 September 2017',
+      },
+      {
+        image: banner,
+        title: `5 Strategi Aman untuk Menyiapkan Dana Pendidikan Anak Anda`,
+        published_date: '24 July 2017',
+      },
+      {
+        image: banner,
+        title: `Sequis Online Memenangkan Indonesia Digital Innovation Award 2017`,
+        published_date: '23 June 2017',
+      }
+    ];
     return (
       <Container>
         <Content style={styles.marginContent}>
@@ -61,8 +77,49 @@ class HomeScreen extends Component {
                   </H2>
                 </Body>
               </CardItem>
-
             </Card>
+          </Row>
+          <Row>
+            <List
+              dataArray={news}
+              renderRow={(newsItem) =>
+                <Card>
+                <Grid>
+                  <Col size={7}>
+                    <Row size={4}>
+                      <Col>
+                        <CardItem>
+                          <Body>
+                            <Text style={styles.newsTitle}>
+                              {newsItem.title}
+                            </Text>
+                          </Body>
+                        </CardItem>
+                      </Col>
+                    </Row>
+                    <Row size={1}>
+                    <CardItem>
+                      <Body style={styles.newsDateContainer}>
+                        <Icon name='ios-calendar-outline' style={styles.newsDateIcon}/>
+                        <Text style={styles.newsDate}>
+                          {newsItem.published_date}
+                        </Text>
+                      </Body>
+                    </CardItem>
+                    </Row>
+                  </Col>
+                  <Col size={3}>
+                    <CardItem style={styles.newsThumbnailsRight}>
+                    <Image
+                    source={newsItem.image}
+                    style={styles.newsImageCardSize}
+                    />
+                    </CardItem>
+                  </Col>
+                </Grid>
+                </Card>
+              }>
+            </List>
           </Row>
         </Content>
       </Container>
@@ -87,7 +144,19 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0
   },
-  marginContent: {margin: 5}
+  marginContent: {margin: 5},
+  newsImageCardSize: {height: 115, flex: 1, width: null},
+  newsThumbnailsRight: {paddingTop:0, paddingRight:0, paddingBottom:0},
+  newsTitle: {},
+  newsDateContainer: {
+    width: 100,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+  newsDateIcon: {marginRight: 10, fontSize: 14, color: '#666'},
+  newsDate: {fontSize: 14, color: '#999'}
 });
 
 export default HomeScreen;
