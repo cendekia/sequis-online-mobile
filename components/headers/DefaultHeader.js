@@ -24,7 +24,7 @@ class DefaultHeader extends Component {
       container: {
         height: Platform.OS ==='android' ? 35 : 45
       },
-      iconName: Platform.OS ==='android' ? 'md-contact' : 'ios-contact',
+      iconName: 'ios-contact',
       fontSize: 30,
       icon: {
         color: "#fff"
@@ -58,9 +58,9 @@ class DefaultHeader extends Component {
     _headerMarginHack = () => {
       let iphoneXHeader;
 
-      iphoneXHeader = STATUS_BAR_HEIGHT == 44 ? 13 : 6;
+      iphoneXHeader = STATUS_BAR_HEIGHT == 44 ? 14 : 8;
 
-      return Platform.OS ==='android' ? 12 : iphoneXHeader;
+      return Platform.OS ==='android' ? 15 : iphoneXHeader;
     }
 
     return (
@@ -79,7 +79,7 @@ class DefaultHeader extends Component {
           {/*<Title style={{ color: "#FFF", width: 200, marginTop: 8 }}>{this.props.title}</Title>*/}
           <Image
             source={require('../../assets/icons/loading-icon-white.png')}
-            style={{ width: 143, height: 29, marginTop: _headerMarginHack() }}
+            style={{ width: 118, height: 24, marginTop: _headerMarginHack() }}
           />
         </Body>
 
