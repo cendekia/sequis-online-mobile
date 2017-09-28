@@ -53,9 +53,12 @@ class HomeScreen extends Component {
               </CardItem>
               <CardItem style={styles.defaultHoverTextCard}>
                 <Body>
-                  <H1 style={styles.fontColor}>
-                    Inovasi asuransi murah - mudah - cepat
-                  </H1>
+                  <H2 style={styles.fontColor}>
+                    Inovasi asuransi
+                  </H2>
+                  <H2 style={styles.fontColor}>
+                    murah - mudah - cepat
+                  </H2>
                 </Body>
               </CardItem>
 
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
   },
   fontColor: { color: 'white' },
   defaultCardBg: { backgroundColor: 'transparent', borderColor: 'transparent' },
-  defaultImageCardSize: {height: 300, flex: 1},
+  defaultImageCardSize: {height: 250, flex: 1, width: null},
   defaultHoverTextCard: {
     backgroundColor: 'rgba(153, 153, 153, 0.6)',
     position: 'absolute',
