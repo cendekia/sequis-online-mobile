@@ -33,23 +33,39 @@ class DefaultHeader extends Component {
   };
 
   render() {
-    function renderLeft(state) {
+    renderLeft = (state) => {
       if (state.showButton) {
         return <Left style={state.style}>{renderButton(state)}</Left>;
       } else {
         return <Left />;
       }
     }
-    function renderButton(state) {
-      return  <Button transparent onPress={state.action}>
+    renderButton = (state) => {
+      return  <Button transparent style={{marginTop: _headerMarginHack()}} onPress={state.action}>
                 <Ionicons name={state.style.iconName} size={state.style.fontSize} style={state.style.icon} />
               </Button>;
+    }
+
+    _headerHack = () => {
+      let iphoneXHeader;
+
+      iphoneXHeader = STATUS_BAR_HEIGHT == 44 ? STATUS_BAR_HEIGHT + 35 : 65;
+
+      return Platform.OS === 'android' ? 30 + STATUS_BAR_HEIGHT : iphoneXHeader;
+    }
+
+    _headerMarginHack = () => {
+      let iphoneXHeader;
+
+      iphoneXHeader = STATUS_BAR_HEIGHT == 44 ? 13 : 6;
+
+      return Platform.OS ==='android' ? 12 : iphoneXHeader;
     }
 
     return (
       <Header
         style={{
-          height: Platform.OS ==='android' ? 30 + STATUS_BAR_HEIGHT : 65
+          height: _headerHack()
         }}
         androidStatusBarColor = {Colors.tintColor}
         backgroundColor = {Colors.tintColor}
@@ -62,7 +78,7 @@ class DefaultHeader extends Component {
           {/*<Title style={{ color: "#FFF", width: 200, marginTop: 8 }}>{this.props.title}</Title>*/}
           <Image
             source={require('../../assets/icons/loading-icon-white.png')}
-            style={{ width: 143, height: 29, marginTop: Platform.OS ==='android' ? 12 : 6 }}
+            style={{ width: 143, height: 29, marginTop: _headerMarginHack() }}
           />
         </Body>
 
