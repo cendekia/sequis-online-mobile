@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { STATUS_BAR_HEIGHT } from '../constants';
 
 import Colors from '../constants/Colors';
 
@@ -39,7 +40,7 @@ export default TabNavigator(
               ? `ios-chatbubbles`
               : 'md-chatbubbles';
             iconSize = focused ? 40 : 28;
-            marginBottom = focused ? -3 : 0;
+            marginBottom = _footerIconHack(focused);
             break;
           case 'Settings':
             iconName = Platform.OS === 'ios'
@@ -48,12 +49,22 @@ export default TabNavigator(
             iconSize = focused ? 40 : 28;
             marginBottom = focused ? -3 : 0;
         }
+
+        _footerIconHack = (focused) => {
+          let iconMarginBottom, iconMarginBottomFocused;
+
+          iconMarginBottom = STATUS_BAR_HEIGHT == 44 ? 15 : 0;
+          iconMarginBottomFocused = STATUS_BAR_HEIGHT == 44 ? 25 : 0;
+
+          return focused ? iconMarginBottomFocused : iconMarginBottom;
+        }
+
         return (
           <Ionicons
             name={iconName}
             size={iconSize}
             style={{ marginBottom: marginBottom }}
-            color={focused ? 'white' : Colors.tabIconDefault}
+            color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
           />
         );
       },
@@ -67,8 +78,8 @@ export default TabNavigator(
       inactiveTintColor: Colors.tabIconDefault,
       showLabel: false,
       style: {
-        borderTopColor: Colors.tintColor,
-        backgroundColor: Colors.tabIconSelected,
+        borderTopColor: 'white',
+        backgroundColor: 'white',
       }
     },
   }
