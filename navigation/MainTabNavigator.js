@@ -29,23 +29,17 @@ export default TabNavigator(
         let iconName, iconSize, marginBottom;
         switch (routeName) {
           case 'Home':
-            iconName = Platform.OS === 'ios'
-              ? `ios-home`
-              : 'md-home';
+            iconName = `ios-home`;
             iconSize = focused ? 40 : 28;
             marginBottom = focused ? -3 : 0;
             break;
           case 'Chat':
-            iconName = Platform.OS === 'ios'
-              ? `ios-chatbubbles`
-              : 'md-chatbubbles';
+            iconName = `ios-chatbubbles`;
             iconSize = focused ? 40 : 28;
             marginBottom = _footerIconHack(focused);
             break;
           case 'Settings':
-            iconName = Platform.OS === 'ios'
-              ? `ios-switch`
-              : 'md-switch';
+            iconName = `ios-switch`;
             iconSize = focused ? 40 : 28;
             marginBottom = focused ? -3 : 0;
         }
