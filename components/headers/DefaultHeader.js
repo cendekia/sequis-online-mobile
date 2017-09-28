@@ -22,13 +22,14 @@ class DefaultHeader extends Component {
     action: () => alert("menu clicked"),
     style: {
       container: {
-        height: Platform.OS ==='android' ? 25 : 45
+        height: Platform.OS ==='android' ? 35 : 45
       },
-      iconName: "ios-contact",
+      iconName: Platform.OS ==='android' ? 'md-contact' : 'ios-contact',
       fontSize: 30,
       icon: {
         color: "#fff"
-      }
+      },
+      marginTop: Platform.OS ==='android' ? -12 : 0
     }
   };
 
