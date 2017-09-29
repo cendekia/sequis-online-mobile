@@ -29,21 +29,33 @@ class HomeScreen extends Component {
     var news = [
       {
         route: 'news/detail/1',
-        image: banner,
+        image: require('../assets/contents/kejepit.jpg'),
         title: `Manfaatkan Waktu Sempit di Hari Libur “Kejepit”`,
         published_date: '22 September 2017',
+        contents: `
+        Tidak punya waktu dan tidak punya uang, dua hal yang paling sering menjadi alibi untuk berkata “nanti-nanti aja deh!”. Namun kalau dipikir-pikir lagi, sebenarnya masalah yang lebih besar adalah tidak punya waktu. Terutama bagi masyarakat urban yang harus membagi waktu antara pekerjaan, keluarga, dan teman. Ada benarnya ungkapan bijak yang berkata bahwa uang bisa dicari, tapi waktu yang hilang tidak bisa dibeli lagi. Karenanya, bukan hanya manajemen keuangan yang perlu diperhatikan, tapi juga manajemen waktu.
+
+        Namun sayangnya, ditengah kesibukan dan prioritas yang ada, sulit sekali mencari waktu kosong. Akhir pekan yang “hanya” 2 hari dalam seminggu pun seringkali diprotes dan dianggap kurang. Karena itu, libur long weekend dan hari libur kejepit terasa seperti suatu berkah tersendiri. Bicara tentang yang kedua, sepertinya hanya Indonesia yang mengenal istilah ini. Terkenal dengan nama Harpitnas (Hari Kejepit Nasional), istilah ini mengacu kepada hari kerja yang terletak di antara dua hari libur. Hari kerja dan hari libur yang saling jepit ini ibarat pisau bermata dua. Menyenangkan, karena ada satu hari libur untuk melarikan diri sejenak dari aktivitas pekerjaan. Namun di sisi lain, tidak sedemikian menyenangkan karena libur yang sangat singkat dan besok harinya sudah harus kembali bekerja, padahal rasanya belum puas beristirahat seharian penuh.`
       },
       {
         route: 'news/detail/2',
-        image: banner,
+        image: require('../assets/contents/anak.jpg'),
         title: `5 Strategi Aman untuk Menyiapkan Dana Pendidikan Anak Anda`,
         published_date: '24 July 2017',
+        contents: `
+        Memperingati Hari Anak Nasional 2017 yang jatuh pada tanggal 23 Juli, Menteri Koordinator bidang Pembangunan Manusia dan Kebudayaan, Puan Maharani, menekankan pentingnya pendidikan agar anak-anak Indonesia memiliki jiwa yang mantap, berbudi luhur, dan berakhlak mulia. Beliau menyinggung pula mengenai masalah ketahanan keluarga karena dari keluarga lah anak-anak memulai segalanya. Pesan ini menjadi pengingat bagi para orang tua agar pendidikan anak menjadi prioritas sejak dini. Namun ada banyak tantangan untuk mewujudkan pendidikan yang terbaik bagi anak-anak bangsa, salah satunya adalah biaya pendidikan yang terus meningkat.
+
+        Badan Pusat Statistik (BPS) mencatat, kenaikan biaya pendidikan di Indonesia mencapai 10% per tahun. Sementara di sisi lain, menurut survei dari Kelly Services Indonesia, rata-rata kenaikan gaji karyawan di Indonesia pada tahun 2016 berada pada kisaran 7-10%. Artinya, perlu strategi tersendiri untuk mengencangkan ikat pinggang agar pendidikan anak tetap terjamin, tanpa mengorbankan aspek-aspek biaya hidup lainnya.`
       },
       {
         route: 'news/detail/3',
-        image: banner,
+        image: require('../assets/contents/award.jpg'),
         title: `Sequis Online Memenangkan Indonesia Digital Innovation Award 2017`,
         published_date: '23 June 2017',
+        contents: `
+        Sequis mendapatkan penghargaan Indonesia Digital Innovation Award 2017 kategori Perusahaan Asuransi Jiwa dengan Aset di atas Rp 10 Triliun. Penghargaan diterima oleh Josafat Timotius, Vice President Information Technology PT A.J. Sequis Life pada hari Jumat, 16 Juni 2017 di Grand Ballroom Pullman Hotel, Jakarta.
+
+        Indonesia Digital Innovation Award 2017 merupakan bentuk apresiasi yang diberikan oleh Majalah Warta Ekonomi kepada perusahaan-perusahaan di Indonesia yang mampu menghasilkan inovasi terbaik dalam hal produk dan layanan yang menerapkan teknologi digital sehingga dapat terus bersaing di tengah perkembangan industri. Sequis terpilih menjadi pemenang lewat Sequis Online, inovasi digital yang memungkinkan nasabah untuk memilih dan membeli produk asuransi secara langsung via online. Ke depannya, Sequis Online akan terus bertransformasi dan menghadirkan inovasi-inovasi berikutnya agar nasabah semakin dipermudah untuk mendapatkan produk asuransi dengan mudah dan cepat.`
       }
     ];
 
