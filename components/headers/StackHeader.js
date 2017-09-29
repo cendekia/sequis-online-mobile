@@ -16,15 +16,15 @@ import {
 import { Platform, Image, StyleSheet } from 'react-native';
 import Colors from '../../constants/Colors';
 
-class DefaultHeader extends Component {
+class StackHeader extends Component {
   defaultState = {
     showButton: true,
-    action: () => alert("menu clicked"),
+    action: () => this.props.navigation.goBack(),
     style: {
       container: {
         height: Platform.OS ==='android' ? 35 : 45
       },
-      iconName: 'ios-contact',
+      iconName: 'ios-arrow-back',
       fontSize: 30,
       icon: {
         color: "#fff"
@@ -76,11 +76,7 @@ class DefaultHeader extends Component {
         { this.props.leftButton && renderLeft(this.props.leftButton)}
 
         <Body style={{ height: Platform.OS ==='android' ? 25 + STATUS_BAR_HEIGHT : 35 }}>
-          {/*<Title style={{ color: "#FFF", width: 200, marginTop: 8 }}>{this.props.title}</Title>*/}
-          <Image
-            source={require('../../assets/icons/loading-icon-white.png')}
-            style={{ width: 118, height: 24, marginTop: _headerMarginHack() }}
-          />
+          <Title style={{ color: "#FFF", width: 200, marginTop: 8 }}>{this.props.title}</Title>
         </Body>
 
         <Right />
@@ -90,7 +86,7 @@ class DefaultHeader extends Component {
   }
 }
 
-export default DefaultHeader;
+export default StackHeader;
 
 const styles = StyleSheet.create({
 

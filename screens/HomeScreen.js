@@ -28,21 +28,27 @@ class HomeScreen extends Component {
   render() {
     var news = [
       {
+        route: 'news/detail/1',
         image: banner,
         title: `Manfaatkan Waktu Sempit di Hari Libur “Kejepit”`,
         published_date: '22 September 2017',
       },
       {
+        route: 'news/detail/2',
         image: banner,
         title: `5 Strategi Aman untuk Menyiapkan Dana Pendidikan Anak Anda`,
         published_date: '24 July 2017',
       },
       {
+        route: 'news/detail/3',
         image: banner,
         title: `Sequis Online Memenangkan Indonesia Digital Innovation Award 2017`,
         published_date: '23 June 2017',
       }
     ];
+
+    const { navigate } = this.props.navigation;
+
     return (
       <Container>
         <Content style={styles.marginContent}>
@@ -83,6 +89,9 @@ class HomeScreen extends Component {
             <List
               dataArray={news}
               renderRow={(newsItem) =>
+                <TouchableOpacity
+                  onPress={() => navigate('NewsDetail', newsItem)}
+                >
                 <Card>
                 <Grid>
                   <Col size={7}>
@@ -118,6 +127,7 @@ class HomeScreen extends Component {
                   </Col>
                 </Grid>
                 </Card>
+                </TouchableOpacity>
               }>
             </List>
           </Row>
